@@ -1,0 +1,85 @@
+/* styles */
+:root {
+  --debug-display: none;
+  --trace-display: none;
+}
+
+.entry {
+  border: 1px solid #d0d0d0;
+  border-radius: 2px;
+  box-shadow: 5px 5px 15px #e0e0e0;
+  padding: 5px;
+  margin-bottom: 3px;
+}
+
+.entry:hover {
+  background-color: #f0f0ff;
+}
+
+.active {
+  background-color: #f0f0ff;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.info {
+  display: block;
+  color: green;
+}
+
+.debug {
+  display: var(--debug-display);
+  color: blue;
+}
+
+.trace {
+  display: var(--trace-display);
+  color: orange;
+}
+
+.collapsible {
+  background-color: inherit;
+  color: inherit;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  padding: 0px;
+  margin: 0px;
+  font: inherit;
+}
+
+.collapsible:after {
+  content: "►";
+  font-size: 10pt;
+  transform: rotate(0deg);
+  transition: transform 0.1s linear;
+  font-weight: bold;
+  text-align: right;
+  float: right;
+}
+
+.collapsible.active:after {
+  content: "►";
+  font-size: 10pt;
+  transform: rotate(90deg);
+  transition: transform 0.1s linear;
+  font-weight: bold;
+  text-align: right;
+  float: right;
+}
+
+/*.active,*/
+.collapsible:hover {
+  background-color: #f0f0ff;
+}
+
+@keyframes expand {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(-45deg);
+  }
+}
